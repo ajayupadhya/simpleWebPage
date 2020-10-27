@@ -1,0 +1,120 @@
+.header {
+  height: 12vh;
+  display: flex;
+  flex-direction: row;
+  margin-top: 2%;
+  justify-content: space-around;
+
+  align-items: center;
+}
+.logo {
+  width: 250px;
+  display: flex;
+  background-image: url("../../../asset/logo.jpg");
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: 50px;
+
+  margin-left: 40px;
+}
+.logo > p {
+  display: flex;
+  margin-left: 80px;
+  align-items: center;
+  font-size: 35px;
+}
+.headeritem {
+  display: flex;
+  width: 58%;
+  flex-direction: row;
+  justify-content: space-between;
+cursor: pointer;
+  align-items: center;
+  margin-left: 40px;
+}
+.headerbtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex: 1;
+}
+.headeritem > p {
+  display: flex;
+  font-size: 17px;
+  cursor: pointer;
+}
+.burger {
+  display: none;
+  cursor: pointer;
+}
+
+.burger > div {
+  width: 30px;
+  height: 3px;
+  background-color: black;
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 1180px) {
+  .headeritem > p {
+    display: flex;
+    font-size: 15px;
+  }
+  .headerbtn {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 860px) {
+  body {
+    overflow-x: hidden;
+  }
+  .headeritem {
+    position: absolute;
+    right: 0px;
+    height: 92vh;
+    top: 14vh;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    align-items: center;
+    width: 40%;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in;
+  }
+  .headeritem > p {
+    opacity: 0;
+  }
+  .burger {
+    display: block;
+  }
+  .logo {
+    width: 80%;
+  }
+}
+
+.headeritem-active {
+  transform: translate(0%);
+}
+
+@keyframes navlinkfade {
+  from {
+    opacity: 0;
+    transform: translate(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0px);
+  }
+}
+.toggle .first {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+.toggle .second {
+  opacity: 0;
+}
+.toggle .third {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
